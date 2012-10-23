@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <style type="text/css">
+        .center-width {
+            height: 530px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .center-width div {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            z-index: -1;
+        }
+        /** Falta manipular la imagen con css para hacerla responsiva **/
+    </style>
+</head>
+<body>
+
+<div id="slider" class="center-width">
+    <div style="z-index: 1;"><img src="images/slider.png" alt="Imagen 1"></div>
+    <div><img src="images/toystory.png" alt="Imagen 2"></div>
+    <div><img src="images/walle.png" alt="Imagen 3"></div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+<script>window.MooTools || document.write('<script src="js/vendor/mootools-core-1.4.5-yc.js"><\/script>')</script>
+
+<script src="js/moo.slider.js"></script>
+<script type="text/javascript">
+    window.addEvent('domready', function(){
+        new MooSlider('slider', {
+            selector    : 'div',
+            direction   : 'left',
+            interval    : 5000
+        });
+    });
+</script>
+</body>
+</html>
